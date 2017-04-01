@@ -174,7 +174,7 @@ nmap <CR> o<Esc>
 nnoremap <TAB> a<TAB><ESC>
 
 "insert <Space> in normal mode 
-nmap <Space> a<Space><Esc>
+nnoremap <Space> a<Space><Esc>
 
 "paste yanked data only. NO deleted data 
 nmap <C-P> "0P
