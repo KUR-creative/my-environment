@@ -1,4 +1,4 @@
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
+" system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
 " will be overwritten everytime an upgrade of the vim packages is performed.
@@ -77,8 +77,7 @@ Plugin 'The-NERD-tree'
 nmap <F2> :NERDTreeToggle<CR>
 
 Plugin 'Tagbar'
-nmap <F3> :Tagbar<CR> 10<C-w>l
-nmap <F4> :Tagbar<CR> 
+nmap <F4> :Tagbar<CR>
 
 function! AcpMeetsForC(context)
     return 0
@@ -108,6 +107,17 @@ function! InsertTabWrapper()
     endif
 endfunction
 
+function! TabWrap()
+    if pumvisible()
+        return "\<CR>"
+    else
+        return "\<TAB>"
+    endif
+endfunction
+
+"tab to complete.
+inoremap <TAB> <c-r>=TabWrap()<CR>
+
 "set case sensitive options in insert mode auto complete.
 set ignorecase
 set infercase
@@ -123,13 +133,15 @@ imap <c-t> <c-]>
 Plugin 'TagHighlight'
 ":UpdateTypesFileOnly   
 "this command don't generate tags file and just use existing tags file.
+"
+":UpdateTypesFile
 
 "highlight colors change
-highlight Comment ctermfg=DarkCyan
+"highlight Comment ctermfg=DarkCyan
 highlight DefinedName ctermfg=Brown
 highlight Member ctermfg=Gray
 highlight EnumerationValue ctermfg=Magenta
-highlight link GlobalVariable Normal
+highlight GlobalVariable ctermfg=DarkGray
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "now MY OWN Vimrc
@@ -192,13 +204,21 @@ nmap <C-l> <C-w>l
 "press <F5> to save ALL buffers and make in command mode
 "map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>
 "imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR> :!sh -c 'make t' <CR>
-map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:make t<CR>:!sh -c 'make t' <CR>
-imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR>:make t<CR>
+map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
+imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
 
 " save ALL buffers.
 " get ctags(use sh script..)
-map <F8> :make ctags<CR>:UpdateTypesFileOnly<CR>
-imap <F8> <ESC>:make ctags<CR>:UpdateTypesFileOnly<CR>i
+"
+"map <F8> :make ctags<CR>:UpdateTypesFileOnly<CR>
+"imap <F8> <ESC>:make ctags<CR>:UpdateTypesFileOnly<CR>i
+"
+"map <F8> :wa<CR>:UpdateTypesFile<CR>
+"imap <F8> <ESC>:wa<CR>:UpdateTypesFile<CR>i
+"
+map <F8> :wa<CR>:UpdateTypesFileOnly<CR>
+imap <F8> <ESC>:wa<CR>:UpdateTypesFileOnly<CR>i
+
 
 imap jj <ESC>
 
@@ -240,11 +260,18 @@ set nowrap      " if one line exceeded window width..
 "search improved
 set incsearch   "auto move to search target
 set hlsearch    "highlight search
+set noic        "don't ignorecase
 
 "off search highlight to press <Esc> <Esc>
 "nnoremap <silent> <Esc><Esc>:let @/=""<CR>
 nnoremap <Esc><Esc> :let @/=""<CR>
                      
+"for ctags commands
+" UpdateTypesFileOnly after each jump.
+nmap ] :tn<CR><F8>
+nmap [ :tp<CR><F8>
+nnoremap <C-]> <C-]>:UpdateTypesFileOnly<CR>
+nnoremap <C-t> <C-t>:UpdateTypesFileOnly<CR>
 
 "my own commands
 " into visual block without using <c-v> ("+p)
@@ -252,8 +279,6 @@ command! VB normal! <C-v>
 command! InitScreen :!gnome-terminal -e 'screen -S s1'
 command! QuitScreen :!screen -X -S s1 quit
 map <F9> :set rnu! rnu?<CR>
-
-
 
 """"""""""""""""""""""""function keys summary""""""""""""""""""""""""
 "F2     NERD-TREE
@@ -285,6 +310,9 @@ map <F9> :set rnu! rnu?<CR>
 " <C-k>
 " <C-l>
 "
+" ]         go next tag
+" [         go prev tag
+"
 " gm
 " 
 " <Esc><Esc>
@@ -295,10 +323,10 @@ map <F9> :set rnu! rnu?<CR>
 " <c-t>     tag-complete
 "
 " jj
-   
+" <TAB>     complete!
+" 
 
 "   COMMAND mode
 " VB
 " InitScreen
 " QuitScreen
-
