@@ -53,6 +53,11 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use this script when vim is way too small.
+if has('gui_running')
+  set guifont=Consolas:h10
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
  
