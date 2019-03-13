@@ -69,8 +69,8 @@ call vundle#begin('$HOME/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'The-NERD-tree'            
-Plugin 'AutoComplPop'
+"Plugin 'The-NERD-tree'            
+"Plugin 'AutoComplPop'
 " The following are examples of different formats supported.
 
 " All of your Plugins must be added before the following line
