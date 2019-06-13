@@ -3,6 +3,7 @@ git config --global alias.cam 'commit -a -m'
 git config --global alias.caam 'commit --amend -a -m'
 git config --global alias.lo 'log --oneline'
 git config --global alias.ls '!git log --oneline --reverse; git status'
+git log -(n) 보여주는 수 제한하기
 
 xnote timer
 autohotkey
