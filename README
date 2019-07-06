@@ -3,6 +3,8 @@ git config --global alias.cam 'commit -a -m'
 git config --global alias.caam 'commit --amend -a -m'
 git config --global alias.lo 'log --oneline'
 git config --global alias.ls '!git log --oneline --reverse; git status'
+git config --global alias.df 'diff'
+git config --global alias.cf 'diff --cached'
 
 git config --global alias.ls '!git log -n 52 --oneline --reverse; git status'  (LAB-MACHINE)
 git log -(n) 보여주는 수 제한하기
