@@ -1,8 +1,12 @@
 git config --global alias.cm 'commit -m'
 git config --global alias.cam 'commit -a -m'
 git config --global alias.caam 'commit --amend -a -m'
+git config --global alias.cp 'commit -p'
+git config --global alias.cap 'commit -p --amend'
+
 git config --global alias.lo 'log --oneline'
 git config --global alias.ls '!git log --oneline --reverse; git status'
+
 git config --global alias.df 'diff'
 git config --global alias.cf 'diff --cached'
 
