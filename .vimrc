@@ -344,4 +344,4 @@ map <F9> :set rnu! rnu?<CR>
 " QuitScreen
 
 map <F5> :wa<CR>:!python "%"<CR>
-:map gi :wa<CR>:!clear;git 
+map gi :wa<CR>:!clear;git 
