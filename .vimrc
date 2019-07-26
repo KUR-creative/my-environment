@@ -54,14 +54,14 @@ endif
 
 "let vundle happen!
 set nocompatible  "set no vi compatablity
-filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'git://git.wincent.com/command-t.git'
 
+filetype off
 filetype plugin indent on
 "now you can add plugins here!
 
@@ -72,6 +72,17 @@ filetype plugin indent on
 " AutoComplPop
 " TagHighlight
 "
+Plugin 'rainbow_parentheses.vim'
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+"command! LR :RainbowParenthesesLoadRound
+"command! TR :RainbowParenthesesToggle
+
+Plugin 'tpope/vim-fireplace'
+
+Plugin 'crucerucalin/qml.vim'
 
 Plugin 'The-NERD-tree'            
 nmap <F2> :NERDTreeToggle<CR>
@@ -204,8 +215,8 @@ nmap <C-l> <C-w>l
 "press <F5> to save ALL buffers and make in command mode
 "map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>
 "imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR> :!sh -c 'make t' <CR>
-map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
-imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
+"map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
+"imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
 
 " save ALL buffers.
 " get ctags(use sh script..)
@@ -220,7 +231,7 @@ map <F8> :wa<CR>:UpdateTypesFileOnly<CR>
 imap <F8> <ESC>:wa<CR>:UpdateTypesFileOnly<CR>i
 
 
-imap jj <ESC>
+imap jk <ESC>
 
 "Ctrl + c for copying to + register
 map <C-c> "+Y
@@ -241,8 +252,9 @@ map gm :call cursor(0, virtcol('$')/2)<CR>
 "Just press <F12>. And you can use Hanja_key for ESC 
 "한자키가 한글을 한자로 바꾸려는 동작 때문에
 "기능이 한영 전환키에 묶여있다. 이걸 해킹 하는 법은 아직 모르겠다.
-map <F12> :!xmodmap -e "keycode 131 = Escape"<CR>
-map! <F12> <ESC>:!xmodmap -e "keycode 131 = Escape"<CR>
+"map <F12> :!xmodmap -e "keycode 131 = Escape"<CR>
+"map! <F12> <ESC>:!xmodmap -e "keycode 131 = Escape"<CR>
+
 
 
 
@@ -330,3 +342,6 @@ map <F9> :set rnu! rnu?<CR>
 " VB
 " InitScreen
 " QuitScreen
+
+map <F5> :wa<CR>:!python "%"<CR>
+:map gi :wa<CR>:!clear;git 
