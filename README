@@ -26,6 +26,24 @@ git config credential.helper store
 git config --global credential.helper 'cache --timeout 7200'
 https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password
 
+----
+Git 브랜치 자동완성하기
+https://medium.com/fusionqa/autocomplete-git-commands-and-branch-names-in-terminal-on-mac-os-x-4e0beac0388a
+https://apple.stackexchange.com/questions/55875/git-auto-complete-for-branches-at-the-command-line
+
+1.
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+2.
+~/.bash_profile에 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+3.
+u+x ~/.git-completion.bash
+4. restart all terminals or..
+source ~/.bash_profile
+
+----
 xnote timer
 autohotkey
 
