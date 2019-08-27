@@ -47,3 +47,20 @@ source ~/.bash_profile
 xnote timer
 autohotkey
 
+----
+My current git+hub flow
+
+master / dev / issue-branches
+
+1. [h]깃헙에서 이슈 생성
+2. [l]로컬에서 브랜치b 생성
+3. [l]로컬에서 문제 해결, 커밋
+4. [l]로컬에서 테스트
+5. [l->h]로컬에서 깃헙으로 브랜치 푸시
+6. [h]깃헙에서 풀리퀘스트 생성, Resovle/Fix #x 로 이슈 닫기
+7. [h]풀리퀘 머지
+8. [l]dev로 브랜치b 머지
+9. [l,h]터미널에서 로컬 브랜치, 리모트 브랜치 모두 삭제
+
+릴리즈하고 싶을 때 dev -> master로 머지.
+
