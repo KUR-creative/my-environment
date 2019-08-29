@@ -52,6 +52,7 @@ My current git+hub flow
 
 master / dev / issue-branches
 
+0. dev 브랜치를 default 브랜치로 settings에서 설정하셈. 중요함.
 1. [h]깃헙에서 이슈 생성
 2. [l]로컬에서 브랜치b 생성
 3. [l]로컬에서 문제 해결, 커밋
