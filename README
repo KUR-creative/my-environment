@@ -58,8 +58,8 @@ master / dev / issue-branches
 3. [l]로컬에서 문제 해결, 커밋
 4. [l]로컬에서 테스트
 5. [l->h]로컬에서 깃헙으로 브랜치 푸시
-6. [h]깃헙에서 풀리퀘스트 생성
-7. [h]풀리퀘 머지(merge 결정하는 코멘트에서 Resovle/Fix #x 로 이슈 닫아야 함. 6.에선 안 됨)
+6. [h]깃헙에서 풀리퀘스트 생성(PR "코멘트"에서 Resovle/Fix #x 로 이슈 닫아야 함. 제목으로는 안 됨)
+7. [h]풀리퀘 머지(내가 짠거면 rebase)
 8. [l]dev로 브랜치b 머지
 9. [l,h]터미널에서 로컬 브랜치, 리모트 브랜치 모두 삭제      git push origin -d <br-name> && git branch -d <br-name>
 
