@@ -1,4 +1,4 @@
-git config --global alias.ca 'commit -a'
+git config --global alias.ca 'commit --amend -a'
 git config --global alias.cm 'commit -m'
 git config --global alias.cam 'commit -a -m'
 git config --global alias.caam 'commit --amend -a -m'
