@@ -92,11 +92,14 @@ filetype plugin indent on    " required
 
 nmap <F2> :NERDTreeToggle<CR>
 
+Plugin 'The-NERD-tree' 
+nmap <F2> :NERDTreeToggle<CR>
+
 function! AcpMeetsForC(context)
     return 0
 endfunction
 
-
+Plugin 'AutoComplPop'
 "let g:acp_behavior = { 
 "\ 'c': [ {'command' : "\<C-x>\<C-o>",
 "\       'meets' : 'AcpMeetsForC',
@@ -301,9 +304,7 @@ nnoremap <C-Right> <C-w>>
 "my own commands
 " into visual block without using <c-v> ("+p)
 command! VB normal! <C-v>
-"command! InitScreen :!gnome-terminal -e 'screen -S s1'
-"command! QuitScreen :!screen -X -S s1 quit
-"map <F9> :set rnu! rnu?<CR>
+map ww :wa<CR>
 
 "set working directory along to current buffer.
 "set autochdir
