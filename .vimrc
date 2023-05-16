@@ -69,8 +69,6 @@ call vundle#begin('$HOME/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'The-NERD-tree'            
-"Plugin 'AutoComplPop'
 " The following are examples of different formats supported.
 
 " All of your Plugins must be added before the following line
@@ -90,9 +88,7 @@ filetype plugin indent on    " required
 
 """"""""""""""""""""""""""Plugins summary"""""""""""""""""""""""""
 " The-NERD-tree
-" (-) Tagbar: not use
 " AutoComplPop
-" TagHighlight
 
 nmap <F2> :NERDTreeToggle<CR>
 
@@ -220,16 +216,16 @@ nmap <C-l> <C-w>l
 "  change local working directory to this window file's path
 "  make
 "press <F5> to save ALL buffers and make in command mode
-map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>
-imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR> :!sh -c 'make t' <CR>
+"map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>
+"imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR> :!sh -c 'make t' <CR>
 "map <F5> :wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
 "imap <F5> <ESC>:wa<CR>:lcd %:p:h<CR>:!clear<CR>:!sh -c 'make t' <CR>:make! t<CR>
 
 " save ALL buffers.
 " get ctags(use sh script..)
 "
-map <F8> :make ctags<CR>:UpdateTypesFileOnly<CR>
-imap <F8> <ESC>:make ctags<CR>:UpdateTypesFileOnly<CR>i
+"map <F8> :make ctags<CR>:UpdateTypesFileOnly<CR>
+"imap <F8> <ESC>:make ctags<CR>:UpdateTypesFileOnly<CR>i
 "
 "map <F8> :wa<CR>:UpdateTypesFile<CR>
 "imap <F8> <ESC>:wa<CR>:UpdateTypesFile<CR>i
@@ -238,7 +234,7 @@ imap <F8> <ESC>:make ctags<CR>:UpdateTypesFileOnly<CR>i
 "imap <F8> <ESC>:wa<CR>:UpdateTypesFileOnly<CR>i
 
 
-imap jj <ESC>
+"imap jj <ESC>
 
 "Ctrl + c for copying to + register
 map <C-c> "+Y
@@ -286,10 +282,10 @@ nnoremap <Esc><Esc> :let @/=""<CR>
                      
 "for ctags commands
 " UpdateTypesFileOnly after each jump.
-nmap ] :tn<CR><F8>
-nmap [ :tp<CR><F8>
-nnoremap <C-]> <C-]>:UpdateTypesFileOnly<CR>
-nnoremap <C-t> <C-t>:UpdateTypesFileOnly<CR>
+"nmap ] :tn<CR><F8>
+"nmap [ :tp<CR><F8>
+"nnoremap <C-]> <C-]>:UpdateTypesFileOnly<CR>
+"nnoremap <C-t> <C-t>:UpdateTypesFileOnly<CR>
 
 " <C-y> to yank current word without space..
 nnoremap <C-y> yiw
@@ -305,9 +301,9 @@ nnoremap <C-Right> <C-w>>
 "my own commands
 " into visual block without using <c-v> ("+p)
 command! VB normal! <C-v>
-command! InitScreen :!gnome-terminal -e 'screen -S s1'
-command! QuitScreen :!screen -X -S s1 quit
-map <F9> :set rnu! rnu?<CR>
+"command! InitScreen :!gnome-terminal -e 'screen -S s1'
+"command! QuitScreen :!screen -X -S s1 quit
+"map <F9> :set rnu! rnu?<CR>
 
 "set working directory along to current buffer.
 "set autochdir
