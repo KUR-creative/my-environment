@@ -1,0 +1,70 @@
+// Place your key bindings in this file to override the defaults
+[
+    // C-p for Command Palette
+    { "key": "ctrl+p", "command": "workbench.action.showCommands" },
+    { "key": "ctrl+shift+p", "command": "-workbench.action.showCommands" },
+
+    // C-o for File Switcher
+    { "key": "ctrl+o", "command": "workbench.action.quickOpen" },
+    { "key": "ctrl+p", "command": "-workbench.action.quickOpen" },
+
+    // F11 for Zen mode
+    { "key": "f11", "command": "-extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && debugConfigurationType == 'pwa-node'" },
+    { "key": "f11", "command": "-workbench.action.debug.stepInto", "when": "debugState != 'inactive'" },
+    { "key": "shift+f11", "command": "-workbench.action.debug.stepOut", "when": "debugState == 'stopped'" },
+    { "key": "f11", "command": "-workbench.action.toggleFullScreen", "when": "!isIOS" },
+
+    { "key": "f11", "command": "workbench.action.toggleZenMode" },
+    { "key": "ctrl+k z", "command": "-workbench.action.toggleZenMode" },
+
+    // C-hlkj for Pannel Navigation
+    { "key": "ctrl+h", "command": "workbench.action.navigateLeft" },
+    { "key": "ctrl+l", "command": "workbench.action.navigateRight" },
+    { "key": "ctrl+k", "command": "workbench.action.navigateUp" },
+    { "key": "ctrl+j", "command": "workbench.action.navigateDown" },
+
+    // Remap Calva's ESC https://calva.io/vim/#remap-calvas-clearinlineresults
+    { "key": "escape", "command": "-calva.clearInlineResults" },
+    { "key": "ctrl+escape", "command": "calva.clearInlineResults",
+      "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'" },
+
+    // S-expression Structural Navigation
+    { "key": "alt+j", "command": "paredit.forwardDownSexp",
+      "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/" },
+    { "key": "alt+k", "command": "paredit.backwardUpSexp",
+      "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/" },
+    { "key": "alt+l", "command": "paredit.forwardSexp",
+      "when": "calva:cursorAfterComment && editorLangId == 'clojure' || calva:keybindingsEnabled && config.calva.paredit.hijackVSCodeDefaults && editorTextFocus && !calva:cursorInComment && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/" },
+
+    // Slurp & Barf forward
+    { "key": "ctrl+shift+l", "command": "-editor.action.selectHighlights",
+      "when": "editorFocus" },
+    { "key": "ctrl+shift+l", "command": "-selectAllSearchEditorMatches",
+      "when": "inSearchEditor" },
+    { "key": "ctrl+shift+l", "command": "-addCursorsAtSearchResults",
+      "when": "fileMatchOrMatchFocus && searchViewletVisible" },
+    { "key": "ctrl+shift+l", "command": "paredit.slurpSexpForward",
+      "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/" },
+    { "key": "ctrl+alt+.", "command": "-paredit.slurpSexpForward",
+      "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/" },
+
+    { "key": "ctrl+shift+h", "command": "-workbench.action.replaceInFiles" },
+    { "key": "ctrl+shift+h", "command": "paredit.barfSexpForward",
+      "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/" },
+    { "key": "ctrl+alt+,", "command": "-paredit.barfSexpForward",
+      "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+    },
+    {
+      "key": "f9",
+      "command": "-editor.debug.action.toggleBreakpoint",
+      "when": "debuggersAvailable && editorTextFocus"
+    },
+    {
+      "key": "f9",
+      "command": "editor.action.toggleWordWrap"
+    },
+    {
+      "key": "alt+z",
+      "command": "-editor.action.toggleWordWrap"
+    },
+]

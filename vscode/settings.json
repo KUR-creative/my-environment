@@ -1,0 +1,169 @@
+{
+    // Lean code pane! See https://stackoverflow.com/a/58114056
+    "editor.minimap.enabled": false,
+    "editor.lineDecorationsWidth": 5,
+    "editor.folding": false,
+    "editor.glyphMargin": false,
+    // Zen mode settings
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideLineNumbers": false,
+    // Vim Keybindings
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "w",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "after": [
+                "a",
+                "<space>",
+                "<esc>"
+            ]
+        },
+        {
+            "before": [
+                "<cr>"
+            ],
+            "commands": [
+                "editor.action.insertLineAfter"
+            ]
+        },
+        // Clojure Evaluations
+        {
+            "before": [
+                "z",
+                "x"
+            ],
+            "commands": [
+                "calva.evaluateCurrentTopLevelForm"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "a"
+            ],
+            "commands": [
+                "calva.evaluateSelection"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+                "calva.loadFile"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "s"
+            ],
+            "commands": [
+                "calva.evaluateEnclosingForm"
+            ]
+        },
+        // X: Kill current sexp
+        {
+            "before": [
+                "X"
+            ],
+            "commands": [
+                {
+                    "command": "cursorMove",
+                    "args": {
+                        "to": "right"
+                    }
+                },
+                "paredit.backwardSexpOrUp",
+                "paredit.killSexpForward"
+            ]
+        },
+    ],
+    // Use killing as cutting like emacs
+    "vim.useSystemClipboard": true,
+    "calva.paredit.killAlsoCutsToClipboard": true,
+    // etc..
+    "keyboard.dispatch": "keyCode", // for Xmodmap
+    "editor.multiCursorModifier": "ctrlCmd",
+    "window.titleBarStyle": "custom",
+    "window.customMenuBarAltFocus": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "todohighlight.keywords": [
+        {
+            "text": "TODO:",
+            "color": "black",
+            "backgroundColor": "yellow",
+            "border": "none",
+            "isWholeLine": false
+        },
+        {
+            "text": "NOTE:",
+            "color": "black",
+            "backgroundColor": "green",
+            "border": "none",
+            "isWholeLine": false
+        },
+        {
+            "text": "CAUTION:",
+            "color": "black",
+            "backgroundColor": "red",
+            "border": "none",
+            "isWholeLine": false
+        },
+        {
+            "text": "FIXME:",
+            "color": "black",
+            "backgroundColor": "red",
+            "border": "none",
+            "isWholeLine": false
+        },
+    ],
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.php",
+        "**/*.rb",
+        "**/*.txt",
+        "**/*.mdown",
+        "**/*.md",
+        "**/*.clj",
+        "**/*.cljs",
+        "**/*.cljc",
+        "**/*.py",
+        "**/*.sh",
+        "**/*.c",
+        "**/*.cpp",
+        "**/*.java"
+    ],
+    "workbench.activityBar.location": "hidden",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "cmake.additionalCompilerSearchDirs": [
+        "C:/msys64/mingw32/bin",
+        "C:/msys64/mingw64/bin",
+        "C:/msys64/clang32/bin",
+        "C:/msys64/clang64/bin",
+        "C:/msys64/clangarm64/bin",
+        "C:/msys64/ucrt64/bin"
+    ],
+    "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "window.commandCenter": false,
+}
