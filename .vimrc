@@ -304,7 +304,7 @@ nnoremap <C-Right> <C-w>>
 "my own commands
 " into visual block without using <c-v> ("+p)
 command! VB normal! <C-v>
-map ww :wa<CR>
+map zc :wa<CR>
 
 "set working directory along to current buffer.
 "set autochdir
