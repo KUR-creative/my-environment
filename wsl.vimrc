@@ -5,7 +5,7 @@ if has('gui_running')
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
-filetype off
+"filetype off
 
 "set case sensitive options in insert mode auto complete.
 set ignorecase
